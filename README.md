@@ -1,6 +1,6 @@
 ## Build
 
-### `git clone https://github.com/EunPyoLee/spa_website.git`
+### `git clone https://github.com/EunPyoLee/493Food.git`
 
 Clones this project to your local
 
