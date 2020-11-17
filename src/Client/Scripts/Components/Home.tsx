@@ -1,9 +1,8 @@
 import * as React from 'react';
 import {Link} from 'react-router-dom';
 
+
 const Home: React.FC<{}> = () => {
-
-
 
    return (
       <div className="home-wrapper">
@@ -14,8 +13,8 @@ const Home: React.FC<{}> = () => {
               Browse Recipes
               </div>
             </Link>
-            <Link to="/Register">
-              <div className="home-item" id="register-link">
+            <Link to="/NewRecipe">
+              <div className="home-item" id="newRecipe-link">
               Upload a Recipe
               </div>
             </Link>

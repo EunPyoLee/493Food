@@ -5,7 +5,8 @@ const constants = {
         recipes: '/recipes',
         recipe: '/recipe',
         register: '/register',
-        groceries: '/groceries'
+        groceries: '/groceries',
+        newRecipe: '/newRecipe'
     }
 };
 export default Object.freeze(constants);
