@@ -17,6 +17,10 @@ a {
   text-decoration: none;
 }
 
+label {
+  padding: 10px
+}
+
 .home-item {
   display: inline-block;
   color: black;
@@ -36,4 +40,17 @@ a {
 .top-row {
   margin: auto;
   text-align: center;
+}
+
+.form-item {
+  padding: 10px 20px;
+}
+
+
+.recipe-form {
+  margin: 0 auto;
+  width: 70%;
+  border-color: white;
+  border-style: solid;
+  border-width: thin;
 }
