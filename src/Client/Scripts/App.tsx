@@ -7,10 +7,11 @@ import Home from './Components/Home';
 import Recipes from './Components/Recipes';
 import Recipe from './Components/Recipe';
 import Register from './Components/Register';
+import Groceries from './Components/Groceries';
 
 const App: React.FC<{}> = () => {
   const {routes} = Constants;
-  const {home, recipes, recipe, register} = routes;
+  const {home, recipes, recipe, register, groceries} = routes;
   return(
     <BrowserRouter>
          <Switch>
@@ -18,6 +19,7 @@ const App: React.FC<{}> = () => {
             <Route exact path={recipes} component={Recipes} />
             <Route exact path={recipe} component={Recipe} />
             <Route exact path={register} component={Register} />
+            <Route exact path={groceries} component={Groceries} />
          </Switch>
       </BrowserRouter>
   )

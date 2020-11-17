@@ -1,2 +1,39 @@
 @import "global";
 @import "vars";
+
+body {
+  background-color: $bgcolor;
+  font-family: arial;
+  font-size: 24px;
+}
+
+h1 {
+  color: white;
+  font-size: 48px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.home-item {
+  display: inline-block;
+  color: black;
+  background-color: white;
+  text-decoration: none;
+  padding: 70px 0px;
+  width: 350px;
+  margin: 10px;
+  text-align: center;
+}
+
+.bottom-row {
+  margin: auto;
+  text-align: center;
+}
+
+.top-row {
+  margin: auto;
+  text-align: center;
+}
