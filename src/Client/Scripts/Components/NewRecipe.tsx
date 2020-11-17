@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {Link} from 'react-router-dom';
 
 const NewRecipe: React.FC<{}> = () => {
 //Just for Prototype will alert when action is completed, will fill in functionality later
@@ -18,6 +19,11 @@ let handleSubmit = function (event:React.FormEvent): void {
 
    return (
       <div className="new-recipe-form">
+      <Link to="/">
+        <div className="home-button">
+        Home
+        </div>
+      </Link>
       <h1>Upload New Recipe</h1>
          <form onSubmit={handleSubmit} className="recipe-form">
             <div className="form-item">
