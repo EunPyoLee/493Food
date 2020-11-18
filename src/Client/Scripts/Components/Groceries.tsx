@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const Register: React.FC<{}> = () => {
+const Groceries: React.FC<{}> = () => {
 
 
 
@@ -11,4 +11,4 @@ const Register: React.FC<{}> = () => {
     );
 }
 
-export default React.memo(Register);
+export default React.memo(Groceries);

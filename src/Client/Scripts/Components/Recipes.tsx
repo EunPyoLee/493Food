@@ -1,12 +1,11 @@
 import * as React from 'react';
+import Recipe from './Recipe'
 
 const Recipes: React.FC<{}> = () => {
 
-   
-
    return (
-      <div className="home-wrapper">
-         Recipes Component
+      <div className="recipes-wrapper">
+        Browse Componenet
       </div>
     );
 }

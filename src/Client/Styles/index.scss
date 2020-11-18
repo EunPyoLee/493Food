@@ -46,7 +46,6 @@ label {
   padding: 10px 20px;
 }
 
-
 .recipe-form {
   margin: 0 auto;
   width: 70%;
@@ -62,4 +61,19 @@ label {
   border-width: thin;
   width: 100px;
   text-align: center;
+}
+
+.recipe-wrapper {
+  padding: 30px 50px;
+  background-color: white;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.recipe-photo {
+  width: 400px;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
 }
