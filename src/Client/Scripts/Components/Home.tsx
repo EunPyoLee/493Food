@@ -20,7 +20,7 @@ const Home: React.FC<{}> = () => {
             </Link>
           </div>
           <div className="bottom-row">
-            <Link to="/Recipe">
+            <Link to="/Random">
               <div className="home-item" id="random-link">
               Get Random Recipe
               </div>
