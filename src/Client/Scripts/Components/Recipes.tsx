@@ -1,10 +1,16 @@
 import * as React from 'react';
+import {Link} from 'react-router-dom';
 import Recipe from './Recipe'
 
 const Recipes: React.FC<{}> = () => {
 
    return (
      <div className="Browse-Wrapper">
+     <Link to="/">
+      <div className="home-button">
+       Home
+       </div>
+     </Link>
      <h1>Browse Recipes</h1>
       <div className="form-wrapper">
        <form>
@@ -39,6 +45,38 @@ const Recipes: React.FC<{}> = () => {
             </div>
             </div>
             </form>
+          </div>
+          <div className="search-results">
+          <Link to="/Random">
+          <div className="recipe-wrapper-small">
+             <Recipe photo="uploads/brownies.jpeg" recipeName="Brownies" prepTime={{time:30,units:"Minutes"}} ingredients={[]} steps={[]}></Recipe>
+          </div>
+          </Link>
+          <Link to="/Random">
+          <div className="recipe-wrapper-small">
+             <Recipe photo="uploads/brownies.jpeg" recipeName="Brownies" prepTime={{time:30,units:"Minutes"}} ingredients={[]} steps={[]}></Recipe>
+          </div>
+          </Link><Link to="/Random">
+          <div className="recipe-wrapper-small">
+             <Recipe photo="uploads/brownies.jpeg" recipeName="Brownies" prepTime={{time:30,units:"Minutes"}} ingredients={[]} steps={[]}></Recipe>
+          </div>
+          </Link><Link to="/Random">
+          <div className="recipe-wrapper-small">
+             <Recipe photo="uploads/brownies.jpeg" recipeName="Brownies" prepTime={{time:30,units:"Minutes"}} ingredients={[]} steps={[]}></Recipe>
+          </div>
+          </Link><Link to="/Random">
+          <div className="recipe-wrapper-small">
+             <Recipe photo="uploads/brownies.jpeg" recipeName="Brownies" prepTime={{time:30,units:"Minutes"}} ingredients={[]} steps={[]}></Recipe>
+          </div>
+          </Link><Link to="/Random">
+          <div className="recipe-wrapper-small">
+             <Recipe photo="uploads/brownies.jpeg" recipeName="Brownies" prepTime={{time:30,units:"Minutes"}} ingredients={[]} steps={[]}></Recipe>
+          </div>
+          </Link><Link to="/Random">
+          <div className="recipe-wrapper-small">
+             <Recipe photo="uploads/brownies.jpeg" recipeName="Brownies" prepTime={{time:30,units:"Minutes"}} ingredients={[]} steps={[]}></Recipe>
+          </div>
+          </Link>
           </div>
           </div>
     );
