@@ -77,3 +77,20 @@ label {
   display: block;
   margin: 0 auto;
 }
+
+.field {
+  float: left;
+  padding: 0px 5px 5px 5px;
+}
+
+.filter-fields {
+  border-style: solid;
+  border-width: thin;
+  float: left;
+  text-align: center;
+}
+
+.form-wrapper {
+  margin: 0 auto;
+  width: 40%;
+}
