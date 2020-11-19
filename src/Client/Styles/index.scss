@@ -70,7 +70,7 @@ label {
   margin: 0 auto;
 }
 
-.recipe-photo {
+.recipe-wrapper img  {
   width: 400px;
   height: 320px;
   object-fit: cover;
@@ -88,9 +88,35 @@ label {
   border-width: thin;
   float: left;
   text-align: center;
+  background-color: white;
 }
 
 .form-wrapper {
+  position: relative;
   margin: 0 auto;
   width: 40%;
+}
+
+.recipe-wrapper-small {
+  display: inline-block;
+  padding: 20px;
+  margin: 10px;
+  border: 10px solid transparent;
+  font-size: 12px;
+  border-width: thin;
+  border-color: white;
+  border-style: solid;
+}
+
+.recipe-wrapper-small img {
+  width: 10px 10px;
+  height: 10;
+  padding: 0px;
+  margin: 0px;
+  object-fit: cover;
+}
+
+.search-results {
+  float: none;
+  display: inline-block;
 }
