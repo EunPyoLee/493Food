@@ -10,7 +10,7 @@ const Register: React.FC<{}> = () => {
         Home
         </div>
       </Link>
-      <h1>Random Recipe</h1>
+      <h1>Here is your recipe!</h1>
       <div className="recipe-wrapper">
          <Recipe photo="uploads/brownies.jpeg" recipeName="Brownies" prepTime={{time:30,units:"Minutes"}} ingredients={[{ingredient:"Brownie Mix", quantity:"1 bag"}, {ingredient:"Egg", quantity:"2"}, {ingredient:"Oil", quantity:"1/2 Cup"}]} steps={["Add ingredients to bowl", "mix", "Pour into pan", "bake for 20 minutes at 350", "eat"]}></Recipe>
       </div>
