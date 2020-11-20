@@ -63,6 +63,7 @@ label {
   border-width: thin;
   width: 100px;
   text-align: center;
+  float: left;
 }
 
 .recipe-wrapper {
@@ -121,4 +122,50 @@ label {
 .search-results {
   float: none;
   display: inline-block;
+}
+
+.add-button-wrapper {
+  text-align: center;
+}
+
+.add-button {
+  color: red;
+  padding: 10px;
+  text-align: center;
+}
+
+.send-button-wrapper {
+  text-align: center;
+}
+
+.send-button {
+  color: red;
+  padding: 10px;
+  text-align: center;
+}
+
+.grocery-list {
+  margin: 0 auto;
+  width:50%;
+  border-color: white;
+  border-style: solid;
+  border-width: thin;
+
+}
+
+.delete-button {
+  color: red;
+  margin: 10px;
+  text-align: center;
+}
+
+.to-list-button {
+  float: right;
+  margin-right: 50px;
+  border-color: white;
+  color: white;
+  border-style: solid;
+  border-width: thin;
+  width: 100px;
+  text-align: center;
 }

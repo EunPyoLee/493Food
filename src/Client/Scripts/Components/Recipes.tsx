@@ -41,7 +41,7 @@ const Recipes: React.FC<{}> = () => {
             <input type="text" placeholder="Search by Ingredient"/>
             </div>
             <div className="field">
-              <button className="SearchButton">Search</button>
+              <button>Search</button>
             </div>
             </div>
             </form>
