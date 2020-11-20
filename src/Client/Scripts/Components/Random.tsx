@@ -10,7 +10,7 @@ const Register: React.FC<{}> = () => {
         Home
         </div>
       </Link>
-      <Link to="/">
+      <Link to="/Groceries">
        <div className="to-list-button">
         My List
         </div>
