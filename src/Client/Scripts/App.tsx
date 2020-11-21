@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Switch, BrowserRouter, Route} from 'react-router-dom';
+import {Switch, BrowserRouter, Route, Link} from 'react-router-dom';
 
 import Constants from './Constants';
 
@@ -9,12 +9,40 @@ import Recipe from './Components/Recipe';
 import Groceries from './Components/Groceries';
 import NewRecipe from './Components/NewRecipe';
 
+import {appbarStyle, appbarRowStyle} from '../Styles/Inline';
+
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
+
 const App: React.FC<{}> = () => {
-  const {routes} = Constants;
+  const {routes, strings} = Constants;
   const {home, recipes, recipe, groceries, newRecipe} = routes;
+  const {appbarTitle} = strings;
   return(
     <BrowserRouter>
-         <Switch>
+      <AppBar className="appbar-wrapper" position="static">
+        <Toolbar className="appbar-toolbar" style={appbarStyle}>
+              <Grid container direction="row" style={appbarRowStyle}>
+                <Grid item xs={4}>
+                  <Typography variant="subtitle2" className="appbar-external-links">
+                    <Link to={home}>Home</Link> | 
+                    <Link to={recipes}> Recipes </Link> | 
+                    <Link to={newRecipe}>Upload a recipe </Link> 
+                    <Link to={groceries}>My grocery list</Link> 
+                  </Typography>
+                </Grid>
+                <Grid item xs={4} style={{textAlign: 'center'}}>
+                    <Typography variant="h5" className="appbar-title"> <Link to={home}>{appbarTitle} </Link></Typography>
+                </Grid>
+                <Grid item xs={4}  style={{textAlign: 'end'}}>
+                    
+                </Grid>
+              </Grid>
+          </Toolbar>
+        </AppBar>
+        <Switch>
             <Route exact path={home} component={Home} />
             <Route exact path={recipes} component={Recipes} />
             <Route exact path={recipe} component={Recipe}/>

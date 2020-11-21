@@ -7,6 +7,9 @@ const constants = {
         groceries: '/groceries',
         newRecipe: '/newRecipe'
     },
+    strings: {
+        appbarTitle: 'Recipe493'
+    },
     recipes:[
         {
             recipeId: 0,
