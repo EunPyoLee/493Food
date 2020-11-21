@@ -27,17 +27,17 @@ const App: React.FC<{}> = () => {
               <Grid container direction="row" style={appbarRowStyle}>
                 <Grid item xs={4}>
                   <Typography variant="subtitle2" className="appbar-external-links">
-                    <Link to={home}>Home</Link> | 
-                    <Link to={recipes}> Recipes </Link> | 
-                    <Link to={newRecipe}>Upload a recipe </Link> 
-                    <Link to={groceries}>My grocery list</Link> 
+                  <Link to={recipes}> Recipes </Link> | 
+                  <Link to={newRecipe}> Upload a recipe </Link>
                   </Typography>
                 </Grid>
                 <Grid item xs={4} style={{textAlign: 'center'}}>
                     <Typography variant="h5" className="appbar-title"> <Link to={home}>{appbarTitle} </Link></Typography>
                 </Grid>
                 <Grid item xs={4}  style={{textAlign: 'end'}}>
-                    
+                  <Typography variant="subtitle2" className="appbar-external-links">
+                    <Link to={groceries}> My grocery list</Link>
+                  </Typography>
                 </Grid>
               </Grid>
           </Toolbar>

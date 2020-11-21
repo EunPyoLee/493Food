@@ -3,18 +3,13 @@ import {Link} from 'react-router-dom';
 import Constant from '../Constants';
 import RecipeCard from './RecipeCard';
 
+import Grid from '@material-ui/core/Grid';
+
 const Recipes: React.FC<{}> = () => {
    const {recipes} = Constant;
-   const {home} = Constant.routes;
 
    return (
       <div className="Browse-Wrapper">
-        <Link to={home}>
-           <div className="home-button">
-              Home
-            </div>
-         </Link>
-         <h1>Browse Recipes</h1>
          <div className="form-wrapper">
             <form>
                <div className="filter-fields">
@@ -50,18 +45,22 @@ const Recipes: React.FC<{}> = () => {
             </form>
          </div>
          <div className="search-results">
-            {recipes.map((recipe, idx) =>(
-               <Link to={`/recipe/${recipe.recipeId}`} key={idx}>
-                  <RecipeCard
-                     name={recipe.name}
-                     imgLink={recipe.imgLink}
-                     time={recipe.time}
-                     unit={recipe.unit}
-                     ingredients={recipe.ingredients}
-                     steps={recipe.steps}
-                  />
-               </Link>)
-            )}
+            <Grid className="recipecard-grid-row" container spacing={0} style={{justifyContent: 'center'}}>
+               {recipes.map((recipe, idx) =>(
+                <Grid key={idx} item sm={7} md={6} className="recipecard-grid-col">
+                   <Link to={`/recipe/${recipe.recipeId}`} key={idx}>
+                     <RecipeCard
+                        name={recipe.name}
+                        imgLink={recipe.imgLink}
+                        time={recipe.time}
+                        unit={recipe.unit}
+                        ingredients={recipe.ingredients}
+                        steps={recipe.steps}
+                     />
+                  </Link>
+                </Grid>
+            ))}
+            </Grid>
           </div>
       </div>
    );

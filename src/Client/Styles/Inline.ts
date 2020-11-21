@@ -6,7 +6,3 @@ export const appbarRowStyle = {
     alignItems: 'center',
     width: '100%'
 };
-
-export const appbarDropMenuButtonStyle = {
-    margin: '0'
-};

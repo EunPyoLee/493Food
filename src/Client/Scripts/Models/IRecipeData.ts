@@ -1,8 +1,8 @@
-interface Ingredient{
+export interface Ingredient{
     ingredientName: string;
     quantity: string;
 }
-export default interface IRecipeData{
+export interface IRecipeData{
     name: string;
     imgLink: string;
     time: number;
