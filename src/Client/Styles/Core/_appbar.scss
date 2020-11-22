@@ -1,0 +1,16 @@
+@import '../vars.scss';
+
+.appbar-toolbar {
+    justify-content: space-between;
+    background-color: $color_white;
+
+    .appbar-title {
+        font-weight: $title_weight;
+        color: $font_color_black;
+        font-family: $appbar_title_font_family;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}

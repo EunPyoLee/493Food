@@ -1,4 +1,19 @@
+@import "Core/appbar";
+@import 'vars.scss';
 //Define global styles here
-.body {
-  background-color: #b3e3ff;
+
+body {
+  margin: 0;
+  background-color: $color_white;
+  font-family: arial;
+  font-size: 24px;
+}
+
+a {
+  text-decoration: none;
+  color: $font_color_black;
+  cursor: pointer;
+  &:visited{
+      color: $font_color_black;
+  }
 }

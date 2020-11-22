@@ -7,11 +7,26 @@ const constants = {
         groceries: '/groceries',
         newRecipe: '/newRecipe'
     },
+    strings: {
+        appbarTitle: 'Recipe493'
+    },
+    contents: {
+        homeContents: {
+            welcomeTitle: 'Welcome to Recipe493',
+            welcomeImg: '/images/welcomeImg.jpg',
+            browseTitle: 'Browse Recipes',
+            browseImg: '/images/browseImg.jpg',
+            randomTitle: 'Recommended Recipe',
+            randomImg: '/images/randomImg.jpg',
+            groceryTitle: 'My Grocery List',
+            groceryImg: '/images/groceryImg.jpg'
+        }
+    },
     recipes:[
         {
             recipeId: 0,
             name: 'Brownies',
-            imgLink: '/images/recipeImages/brownies.jpeg',
+            imgLink: '/images/recipeImages/brownies.jpg',
             time : 30,
             unit: 'Minutes',
             ingredients: [
@@ -41,7 +56,7 @@ const constants = {
         {
             recipeId: 1,
             name: 'Brownies',
-            imgLink: '/images/recipeImages/brownies.jpeg',
+            imgLink: '/images/recipeImages/brownies.jpg',
             time : 30,
             unit: 'Minutes',
             ingredients: [
@@ -56,6 +71,10 @@ const constants = {
                 {
                     ingredientName: 'Oil',
                     quantity: '1/2 Cup'
+                },
+                {
+                    ingredientName: 'Sugar',
+                    quantity: '5 Tbsp'
                 }
             ],
             steps: [
@@ -67,7 +86,7 @@ const constants = {
         {
             recipeId: 2,
             name: 'Brownies',
-            imgLink: '/images/recipeImages/brownies.jpeg',
+            imgLink: '/images/recipeImages/brownies.jpg',
             time : 30,
             unit: 'Minutes',
             ingredients: [
@@ -82,6 +101,10 @@ const constants = {
                 {
                     ingredientName: 'Oil',
                     quantity: '1/2 Cup'
+                },
+                {
+                    ingredientName: 'Sugar',
+                    quantity: '5 Tbsp'
                 }
             ],
             steps: [
@@ -93,7 +116,7 @@ const constants = {
         {
             recipeId: 3,
             name: 'Brownies',
-            imgLink: '/images/recipeImages/brownies.jpeg',
+            imgLink: '/images/recipeImages/brownies.jpg',
             time : 30,
             unit: 'Minutes',
             ingredients: [
@@ -108,6 +131,10 @@ const constants = {
                 {
                     ingredientName: 'Oil',
                     quantity: '1/2 Cup'
+                },
+                {
+                    ingredientName: 'Sugar',
+                    quantity: '5 Tbsp'
                 }
             ],
             steps: [
