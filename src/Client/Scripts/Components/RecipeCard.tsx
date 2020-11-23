@@ -8,9 +8,10 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 
 import {imgStyle, contentCardStyle} from '../../Styles/Components/StyleRecipe';
+import { type } from 'os';
 
 const RecipeCard: React.FC<IRecipeData> = (props:IRecipeData) => {
-   const {name, imgLink, ingredients, steps} = props;
+   const {recipeId, name, recipeType, imgLink, ingredients, steps} = props;
 
    const renderIngredientLines = (ingredients: ReadonlyArray<Ingredient>): ReadonlyArray<React.ReactNode> => {
       return ingredients.map((ingredient, idx) => (
@@ -36,6 +37,9 @@ const RecipeCard: React.FC<IRecipeData> = (props:IRecipeData) => {
                      <Typography variant="h3" component="h3">
                         {name}
                      </Typography>
+                     <Typography  color="textSecondary" gutterBottom>
+                           {recipeType}
+                     </Typography> 
                      <ul>
                         <Typography  color="textSecondary" gutterBottom>
                            {renderIngredientLines(ingredients)}

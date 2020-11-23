@@ -1,9 +1,10 @@
 //Define recipie dict here
- let recipes = [
+ let recipe_dict = [
     {
         recipeId: 0,
         name: 'Brownies',
         imgLink: '/images/recipeImages/brownies.jpg',
+        recipeType: "desserts",
         time : 30,
         unit: 'Minutes',
         ingredients: [
@@ -34,6 +35,7 @@
         recipeId: 1,
         name: 'Western Omelette',
         imgLink: '/images/recipeImages/westernOmelette',
+        recipeType: "vegetarian", 
         time : 15,
         unit: 'Minutes',
         ingredients: [
@@ -78,6 +80,7 @@
         recipeId: 2,
         name: 'Teriyaki Noodles',
         imgLink: '/images/recipeImages/teriyaki',
+        recipeType: "vegetarian",
         time : 18,
         unit: 'Minutes',
         ingredients: [
@@ -121,6 +124,7 @@
         recipeId: 3,
         name: 'Chicken Broccoli Penne Pesto',
         imgLink: '/images/recipeImages/broccoliPesto',
+        recipeType: "chicken", 
         time : 25,
         unit: 'Minutes',
         ingredients: [
@@ -163,4 +167,4 @@
         ]
     }
 ]
-export default recipes;
+export default recipe_dict;
