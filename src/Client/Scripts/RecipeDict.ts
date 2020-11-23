@@ -34,7 +34,7 @@
     {
         recipeId: 1,
         name: 'Western Omelette',
-        imgLink: '/images/recipeImages/westernOmelette',
+        imgLink: '/images/recipeImages/westernOmelette.jpg',
         recipeType: "vegetarian", 
         time : 15,
         unit: 'Minutes',
@@ -79,7 +79,7 @@
     {
         recipeId: 2,
         name: 'Teriyaki Noodles',
-        imgLink: '/images/recipeImages/teriyaki',
+        imgLink: '/images/recipeImages/teriyaki.jpg',
         recipeType: "vegetarian",
         time : 18,
         unit: 'Minutes',
@@ -123,7 +123,7 @@
     {
         recipeId: 3,
         name: 'Chicken Broccoli Penne Pesto',
-        imgLink: '/images/recipeImages/broccoliPesto',
+        imgLink: '/images/recipeImages/broccoliPesto.jpg',
         recipeType: "chicken", 
         time : 25,
         unit: 'Minutes',

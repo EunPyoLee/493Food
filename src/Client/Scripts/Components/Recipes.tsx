@@ -18,12 +18,14 @@ const Recipes: React.FC<{}> = () => {
 
 const filterRecipes = () => {
    return (event: React.MouseEvent) => {
-      showing_recipes = showing_recipes.filter((p) => p.time < timeFilter && (typeFilter == "" || p.recipeType === typeFilter))
+      console.log(showing_recipes);
+      showing_recipes = showing_recipes.filter((p) => p.time < timeFilter && (typeFilter === "" || p.recipeType === typeFilter))
+      console.log(showing_recipes);
    }
 };
 
-const renderRecipes = (recipes: ReadonlyArray<IRecipeData>): ReadonlyArray<React.ReactNode> => {
-   return recipes.map((recipe, idx) => (
+const renderRecipes = (recipesin: ReadonlyArray<IRecipeData>): ReadonlyArray<React.ReactNode> => {
+   return recipesin.map((recipe, idx) => (
       <Grid key={idx} item sm={7} md={6} className="recipecard-grid-col">
          <Link to={`/recipe/${recipe.recipeId}`} key={idx}>
             <RecipeCard
@@ -48,24 +50,19 @@ const renderRecipes = (recipes: ReadonlyArray<IRecipeData>): ReadonlyArray<React
                <div className="filter-fields">
                   <div className="field">
                      <div className="dropdown-field">
-                        <input type="select" name="filter-type" id="select-time" value={typeFilter}>
+                        <select name="filter-type" id="select-time" value={typeFilter} onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {typeFilter = e.currentTarget.value;}}>
                            <option value="any-type">Select Type</option>
                            <option value="chicken">Chicken</option>
                            <option value="beef">Beef</option>
                            <option value="vegetarian">Vegetarian</option>
                            <option value="desserts">Desserts</option>
-                        </input>
+                        </select>
                      </div>
                   </div>
                   <div className="field">
                      <div className="dropdown-field">
-                        <select name="filter-time" id="select-time" value={timeFilter}>
-                           <option value="any-time">Select Time</option>
-                           <option value={10}>Less than 10 Minutes</option>
-                           <option value={20}>Less than 20 Minutes</option>
-                           <option value={30}>Less than 30 Minutes</option>
-                           <option value={60}>Less than 1 Hour</option>
-                        </select>
+                        <label>Please input a maximum number of minutes</label>
+                        <input name="filter-time" type="number" value={timeFilter} onChange={(e : React.ChangeEvent<HTMLInputElement>) => {timeFilter = parseInt(e.currentTarget.value)}}/>
                      </div>
                   </div>
                   <div className="field">
