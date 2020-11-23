@@ -8,6 +8,12 @@ import Grid from '@material-ui/core/Grid';
 const Recipes: React.FC<{}> = () => {
    const {recipes} = Constant;
 
+const renderRecipes = (steps: ReadonlyArray<string>): ReadonlyArray<React.ReactNode> => {
+   return steps.map((step, idx) => (
+      <li key={idx}>{step}</li>
+   ))
+};
+
    return (
       <div className="Browse-Wrapper">
          <div className="form-wrapper">
