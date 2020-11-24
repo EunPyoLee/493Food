@@ -1,16 +1,62 @@
 @import '../vars.scss';
 
+
 label {
   padding: 20px;
+}
+
+.form-button {
+  background-color: $font_color_green; /* Green */
+  border: none;
+  color: white;
+  padding: 2px 10px;
+  text-align: center;
+  font-size: 16px;
+  margin:10px;
 }
 .new-recipe-form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 50px;
 }
 
 .form-item {
-  padding:10px 20px;
+  padding: 20px 10px;
+  font-size: 24px;
+}
+
+.form-label {
+  padding: 20px 10px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.submit-button-wrapper {
+  text-align: center;
+}
+
+.submit-button {
+  background-color: $font_color_green; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  font-size: 16px;
+  margin: 10px;
+}
+
+.new-form-wrapper {
+  border-radius: 80px;
+  width: 85%;
+  border-color: $font_color_green;
+  border-style: dotted;
+  margin: 20px;
+  padding: 20px;
+}
+
+.new-list-item {
+  color: $font_color_green;
+  opacity: 80%;
+  font-size: 20px;
 }

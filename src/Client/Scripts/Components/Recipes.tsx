@@ -2,7 +2,6 @@ import * as React from 'react';
 import {Link} from 'react-router-dom';
 import Constant from '../Constants';
 import RecipeCard from './RecipeCard';
-
 import Grid from '@material-ui/core/Grid';
 
 const Recipes: React.FC<{}> = () => {
