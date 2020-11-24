@@ -9,6 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import { Url } from 'url';
 import { FormControl, Select } from '@material-ui/core';
 import { time } from 'console';
+import { setConstantValue } from 'typescript';
 
 const Recipes: React.FC<{}> = () => {
    const recipes = recipe_dict;
@@ -22,6 +23,16 @@ const filterRecipes = () => {
       showing_recipes = showing_recipes.filter((p) => p.time < timeFilter && (typeFilter === "" || p.recipeType === typeFilter))
       console.log(showing_recipes);
    }
+};
+
+const handleSubmit = (e: React.SyntheticEvent) => {
+   const target = e.target as typeof e.target & {
+      filtertype: { value: string };
+      filtertime: { value: number };
+    };
+    timeFilter = target.filtertime.value;
+    typeFilter = target.filtertype.value;
+    filterRecipes();
 };
 
 const renderRecipes = (recipesin: ReadonlyArray<IRecipeData>): ReadonlyArray<React.ReactNode> => {
@@ -50,7 +61,7 @@ const renderRecipes = (recipesin: ReadonlyArray<IRecipeData>): ReadonlyArray<Rea
                <div className="filter-fields">
                   <div className="field">
                      <div className="dropdown-field">
-                        <select name="filter-type" id="select-time" value={typeFilter} onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {typeFilter = e.currentTarget.value;}}>
+                        <select name="filtertype" id="select-type" defaultValue={typeFilter} onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {(typeFilter = e.target.value);}}>
                            <option value="any-type">Select Type</option>
                            <option value="chicken">Chicken</option>
                            <option value="beef">Beef</option>
@@ -62,11 +73,11 @@ const renderRecipes = (recipesin: ReadonlyArray<IRecipeData>): ReadonlyArray<Rea
                   <div className="field">
                      <div className="dropdown-field">
                         <label>Please input a maximum number of minutes</label>
-                        <input name="filter-time" type="number" value={timeFilter} onChange={(e : React.ChangeEvent<HTMLInputElement>) => {timeFilter = parseInt(e.currentTarget.value)}}/>
+                        <input name="filtertime" type="number" defaultValue={timeFilter} onChange={(e : React.ChangeEvent<HTMLInputElement>) => {(timeFilter = parseInt(e.target.value));}}/>
                      </div>
                   </div>
                   <div className="field">
-                     <button type="submit" className="button" onClick={filterRecipes}>Submit</button>
+                     <button type="submit" className="button" onClick={handleSubmit}>Submit</button>
                   </div>
                </div>
             </form>
