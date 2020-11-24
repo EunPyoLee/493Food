@@ -4,7 +4,6 @@ import Constant from '../Constants';
 import recipe_dict from '../RecipeDict'
 import RecipeCard from './RecipeCard';
 import {IRecipeData, Ingredient} from '../Models/IRecipeData';
-
 import Grid from '@material-ui/core/Grid';
 import { Url } from 'url';
 import { FormControl, Select } from '@material-ui/core';

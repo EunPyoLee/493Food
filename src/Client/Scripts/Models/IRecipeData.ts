@@ -12,3 +12,8 @@ export interface IRecipeData{
     ingredients: ReadonlyArray<Ingredient>;
     steps: ReadonlyArray<string>;
 }
+
+export interface NewRecipeData{
+    ingredients: Ingredient[];
+    steps: string[];
+}
