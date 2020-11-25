@@ -3,10 +3,12 @@ export interface Ingredient{
     quantity: string;
 }
 export interface IRecipeData{
+    recipeId: number;
     name: string;
     imgLink: string;
     time: number;
     unit: string;
+    type: string;
     ingredients: ReadonlyArray<Ingredient>;
     steps: ReadonlyArray<string>;
 }

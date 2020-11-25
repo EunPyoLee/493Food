@@ -1,11 +1,6 @@
 import * as React from 'react';
-import {Link} from 'react-router-dom';
-import Constant from '../Constants';
 import Grid from '@material-ui/core/Grid';
 import {Ingredient, IRecipeData, NewRecipeData} from '../Models/IRecipeData';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardMedia from '@material-ui/core/CardMedia';
-import {imageStyle} from '../../Styles/Components/StyleNewRecipe';
 
 type NewRecipeState = {
   stepsToAdd:string[],

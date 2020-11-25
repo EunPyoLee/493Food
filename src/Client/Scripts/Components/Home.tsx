@@ -6,10 +6,11 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
 
 import Constant from '../Constants';
+import recipes from '../RecipeData';
 import {imageStyle} from '../../Styles/Components/StyleHome';
 
 const Home: React.FC<{}> = () => {
-  const {recipes, contents : {homeContents}} = Constant;
+  const {contents : {homeContents}} = Constant;
   const randRecipe = recipes[Math.floor(Math.random() * recipes.length)];
   const {welcomeTitle, welcomeImg, browseTitle, browseImg, randomTitle, randomImg, groceryImg, groceryTitle} = homeContents;
 
