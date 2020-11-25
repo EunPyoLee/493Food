@@ -33,7 +33,7 @@ const RecipeCard: React.FC<IRecipeData> = (props:IRecipeData) => {
             <Grid item xs={12} md={6} className="home-grid-col">
                <Card style={contentCardStyle}>
                   <CardContent >
-                     <Typography variant="h3" component="h3">
+                     <Typography variant="h5" component="h5">
                         {name}
                      </Typography>
                      <ul>

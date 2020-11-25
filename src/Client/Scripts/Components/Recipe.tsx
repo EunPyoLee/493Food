@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 
 import Constant from '../Constants';
+import recipes from '../RecipeData';
 import {Ingredient} from '../Models/IRecipeData'
 import {imgStyle, contentCardStyle, contentTextStyle} from '../../Styles/Components/StyleRecipe';
 
@@ -18,7 +19,7 @@ interface RouteParams{
 
 const Recipe: React.FC<RouteComponentProps<RouteParams>> = (props:RouteComponentProps<RouteParams>) => {
    const recipeId = parseInt(props.match.params.recipeId);
-   const recipe = Constant.recipes[recipeId];
+   const recipe = recipes[recipeId];
 
    const renderIngredientLines = (ingredients: ReadonlyArray<Ingredient>): ReadonlyArray<React.ReactNode> => {
       return ingredients.map((ingredient, idx) => (
