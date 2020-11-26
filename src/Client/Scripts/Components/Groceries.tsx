@@ -10,6 +10,11 @@ const Groceries: React.FC<{}> = () => {
    if(list[0]){
       empty = <p></p>
    };
+   //the following goes int the li element to toggle them on off but is not working
+   /*onClick="(function(item){
+      list.splice(list.findIndex(item.ingredientName,1)
+   })();return false;"*/
+
    return (
       <div className="register-wrapper">
          <Link to="/">
@@ -21,9 +26,7 @@ const Groceries: React.FC<{}> = () => {
          <ul className="grocery-list">
             {empty}
             {list?.map(item => (
-               <li>{item?.quantity} {' of '} {item?.ingredientName}<button ref={item?.ingredientName} className="delete-button" onClick="(function(item){
-                  list.splice(list.findIndex(item.ingredientName,1)
-              })();return false;">x</button></li>
+               <li>{item?.quantity} {' of '} {item?.ingredientName}<button ref={item?.ingredientName} className="delete-button" >x</button></li>
             ))}
          </ul>
          <div className="send-button-wrapper">
