@@ -20,8 +20,8 @@ let myRecipeData:NewRecipeData = {
 let myRecipeInput:NewRecipeInput = {
   nameInput: '',
   timeInput: 0,
-  unitInput: '',
-  typeInput: '',
+  unitInput: 'Minutes',
+  typeInput: 'None',
   imgInput: '',
   ingredientInput: '',
   quantityInput: '',
@@ -63,7 +63,7 @@ let updateSteps = function (): void {
 let handleSubmit = function (): void {
   alert("New Recipe Added!")
   let myNewRecipe:RecipeToAdd = {
-      recipeId: recipes.length+1,
+      recipeId: recipes.length,
       name: inState.nameInput,
       imgLink: inState.imgInput,
       time: inState.timeInput,
@@ -72,8 +72,7 @@ let handleSubmit = function (): void {
       ingredients: state.ingredients,
       steps: state.steps,
   }
-  console.log(myNewRecipe)
-  recipes.push(myNewRecipe)
+  console.log(recipes)
 }
 
 const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>): void => {
@@ -82,6 +81,8 @@ const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>): void => {
 
 const onChangeSelect= (event: React.ChangeEvent<HTMLSelectElement>): void => {
    setInState(prevState => ({...prevState, [event.target.name]: event.target.value}));
+   console.log(event.target.name)
+   console.log(event.target.value)
 }
 
    return (
@@ -127,9 +128,9 @@ const onChangeSelect= (event: React.ChangeEvent<HTMLSelectElement>): void => {
               </div>
               <div className="form-item">
                 <input type="Number" placeholder="0" name="timeInput" onChange={onChangeInput}/>
-                <select name="timeInput" id="time-units" onChange={onChangeSelect}>
-                  <option value="minutes">Mins</option>
-                  <option value="hours">Hrs</option>
+                <select name="unitInput" id="time-units" onChange={onChangeSelect}>
+                  <option value="Minutes">Minutes</option>
+                  <option value="Hours">Hours</option>
                 </select>
               </div>
               <div className="form-item">
