@@ -72,11 +72,22 @@ let handleSubmit = function (): void {
       ingredients: state.ingredients,
       steps: state.steps,
   }
+  recipes.push(myNewRecipe)
   console.log(recipes)
 }
 
 const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>): void => {
    setInState(prevState => ({...prevState, [event.target.name]: event.target.value}));
+}
+
+const onChangeFile = (event: React.ChangeEvent<HTMLInputElement>): void => {
+  if (event.target) {
+    if (event.target.files) {
+   const myFile = event.target.files[0]
+   setInState(prevState => ({...prevState, [event.target.name]: "/images/" + myFile.name}));
+   console.log(myFile)
+ }
+}
 }
 
 const onChangeSelect= (event: React.ChangeEvent<HTMLSelectElement>): void => {
@@ -111,7 +122,7 @@ const onChangeSelect= (event: React.ChangeEvent<HTMLSelectElement>): void => {
               </Grid>
               <Grid container item xs={6} direction="column" >
               <div className="form-item">
-                <input type="file" name="imgInput" className="file-button" accept="image/*" onChange={onChangeInput}/>
+                <input type="file" name="imgInput" className="file-button" accept="image/*" onChange={onChangeFile}/>
               </div>
               <div className="form-item">
                 <input type="text" placeholder="Recipe Name" name="nameInput" onChange={onChangeInput}/>
