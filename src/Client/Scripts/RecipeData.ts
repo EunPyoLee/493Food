@@ -64,71 +64,72 @@ let recipes = [
             }
         ],
         steps: [
-            'Mix Brownie Mix with Eggs',
-            'Mix in the sugar',
-            'Bake the brownie for 25-30 minutes in a 350F oven'
+            'Chop Tomatoes, Onion, and Cucumber',
+            'Add all ingredients to bowl',
+            'Mix!'
         ]
     },
     {
         recipeId: 2,
-        name: 'Brownies',
-        imgLink: '/images/recipeImages/brownies.jpg',
-        time : 30,
+        name: 'Omelette',
+        imgLink: '/images/recipeImages/omelette.jpeg',
+        time : 15,
         unit: 'Minutes',
-        type: 'desserts',
+        type: 'vegetarian',
         ingredients: [
             {
-                ingredientName: 'Brownie Mix',
-                quantity: '1 bag'
-            },
-            {
-                ingredientName: 'Egg',
+                ingredientName: 'Eggs',
                 quantity: '2'
             },
             {
-                ingredientName: 'Oil',
-                quantity: '1/2 Cup'
+                ingredientName: 'Cheese',
+                quantity: '1 slice'
             },
             {
-                ingredientName: 'Sugar',
-                quantity: '5 Tbsp'
+                ingredientName: 'Onion',
+                quantity: '1/4 Cup'
+            },
+            {
+                ingredientName: 'Peppers',
+                quantity: '1/4 Cup'
             }
         ],
         steps: [
-            'Mix Brownie Mix with Eggs',
-            'Mix in the sugar',
-            'Bake the brownie for 25-30 minutes in a 350F oven'
+            'Whisk eggs in a bowl',
+            'Pour egg into a pan and cook on medium heat for 3 minutes',
+            'Add in Onions, Peppers, and Cheese',
+            'Cook for more 5 minutes'
         ]
     },
     {
         recipeId: 3,
-        name: 'Brownies',
-        imgLink: '/images/recipeImages/brownies.jpg',
+        name: 'Hamburger',
+        imgLink: '/images/recipeImages/burger.jpeg',
         time : 30,
         unit: 'Minutes',
-        type: 'desserts',
+        type: 'beef',
         ingredients: [
             {
-                ingredientName: 'Brownie Mix',
-                quantity: '1 bag'
+                ingredientName: 'Beef',
+                quantity: '8 oz'
             },
             {
-                ingredientName: 'Egg',
-                quantity: '2'
+                ingredientName: 'Ketchup',
+                quantity: '1 tablespoon'
             },
             {
-                ingredientName: 'Oil',
-                quantity: '1/2 Cup'
+                ingredientName: 'Mustard',
+                quantity: '1 tablespoon'
             },
             {
-                ingredientName: 'Sugar',
-                quantity: '5 Tbsp'
+                ingredientName: 'White Bun',
+                quantity: '1'
             }
         ],
         steps: [
-            'Mix Brownie Mix with Eggs',
-            'Mix in the sugar',
-            'Bake the brownie for 25-30 minutes in a 350F oven'
+            'Form hamburger patty with beef ',
+            'Cook in frying pan at medium heat for 10 minutes on each side',
+            'Place on bun and top with Ketchup and Mustard'
         ]
     }
 ]
