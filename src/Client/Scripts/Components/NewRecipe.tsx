@@ -84,7 +84,7 @@ const onChangeFile = (event: React.ChangeEvent<HTMLInputElement>): void => {
   if (event.target) {
     if (event.target.files) {
    const myFile = event.target.files[0]
-   setInState(prevState => ({...prevState, [event.target.name]: "/images/" + myFile.name}));
+   setInState(prevState => ({...prevState, [event.target.name]: "/images/recipeImages/" + myFile.name}));
    console.log(myFile)
  }
 }
