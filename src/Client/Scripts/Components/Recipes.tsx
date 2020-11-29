@@ -101,26 +101,28 @@ const Recipes: React.FC<{}> = () => {
             <form onSubmit={handleFilter}>
                <Grid container spacing={2} direction='column' style={{padding: '20px'}}>
                   <Grid container item xs={6}>
-                     <Typography variant="subtitle1" component="h2" style={{paddingRight: '10px'}}>
-                        Type
-                     </Typography>
-                     <select onChange={onChangeType} name="typeOption" id="select-time">
+                     <div className="filter-wrapper">
+                     <div className='button-holder'>
+                        <img src='/images/type_icon.png' />
+                     </div>
+                     <select onChange={onChangeType} name="typeOption" id="select-type">
                         <option disabled>Select Type</option>
-                        <option value="none">All</option>
+                        <option value="none">Recipe Type</option>
                         <option value="chicken">Chicken</option>
                         <option value="beef">Beef</option>
                         <option value="pork">Pork</option>
                         <option value="vegetarian">Vegetarian</option>
                         <option value="desserts">Desserts</option>
                      </select>
+                     </div>
                   </Grid>
                   <Grid container item xs={6}>
-                     <Typography variant="subtitle1" component="h2" style={{paddingRight: '10px'}}>
-                        Time
-                     </Typography>
+                  <div className='button-holder'>
+                        <img src='/images/time-icon.png' />
+                     </div>
                      <select onChange={onChangeTime} name="timeOption" id="select-time">
                         <option disabled>Select Time</option>
-                        <option value={0}>All</option>
+                        <option value={0}>Time</option>
                         <option value={10}>Less than 10 Minutes</option>
                         <option value={20}>Less than 20 Minutes</option>
                         <option value={30}>Less than 30 Minutes</option>
@@ -128,13 +130,19 @@ const Recipes: React.FC<{}> = () => {
                      </select>
                   </Grid>
                   <Grid container item xs={6}>
+                     <div className='button-holder'>
+                        <img src='/images/search-icon.png' />
+                     </div>
                      <input
                         onChange={onChangeText}
+                        id="type-search"
                         type="text" name='searchText'
                         placeholder="Search by Name"
                         value={state.searchText}
                      />
-                     <button>Search</button>
+                  </Grid>
+                  <Grid>
+                        <button id="search-bttn">Search</button>
                   </Grid>
                </Grid>
                </form>
@@ -153,6 +161,7 @@ const Recipes: React.FC<{}> = () => {
                         type={recipe.type}
                         ingredients={recipe.ingredients}
                         steps={recipe.steps}
+                        likes={recipe.likes}
                      />
                   </Link>
                 </Grid>
