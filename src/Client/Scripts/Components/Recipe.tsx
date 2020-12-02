@@ -48,7 +48,7 @@ const Recipe: React.FC<RouteComponentProps<RouteParams>> = (props:RouteComponent
 };
 
    return (
-      
+
       <div className="recipe-wrapper">
          <Grid className="home-grid-row" container spacing={0} style={{justifyContent: 'center'}}>
             <Grid item xs={12} md={6} className="home-grid-col">
@@ -59,7 +59,7 @@ const Recipe: React.FC<RouteComponentProps<RouteParams>> = (props:RouteComponent
             </Grid>
             <Grid item xs={12} md={6} className="home-grid-col">
                <Card style={contentCardStyle}>
-                  <CardContent >
+                  <CardContent>
                      <Typography variant="h3" component="h3">
                         {recipe.name}
                      </Typography>
@@ -73,13 +73,11 @@ const Recipe: React.FC<RouteComponentProps<RouteParams>> = (props:RouteComponent
                            {renderStepLines(recipe.steps)}
                         </ol>
 
-                     </Typography>  
+                     </Typography>
                      <form onSubmit={handleSubmit}>
                         <input type='submit' className="submit-button" value="Add ingredients to grocery list"/>
-                     </form>     
-                     </Typography>
-
-                  </CardContent>
+                     </form>
+                     </CardContent> 
                </Card>
             </Grid>
          </Grid>
