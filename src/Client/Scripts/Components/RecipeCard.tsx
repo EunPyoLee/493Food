@@ -7,10 +7,13 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 
+
 import {imgStyle, contentCardStyle} from '../../Styles/Components/StyleRecipe';
+import { ReactComponent } from '*.svg';
 
 const RecipeCard: React.FC<IRecipeData> = (props:IRecipeData) => {
-   const {name, imgLink, ingredients, steps} = props;
+   const {name, imgLink, ingredients, steps, likes} = props;
+   const [btncolor, setColor] = React.useState("grey");
 
    const renderIngredientLines = (ingredients: ReadonlyArray<Ingredient>): ReadonlyArray<React.ReactNode> => {
       return ingredients.map((ingredient, idx) => (
@@ -20,6 +23,11 @@ const RecipeCard: React.FC<IRecipeData> = (props:IRecipeData) => {
          </li>
       ))
   };
+
+  const handleLike = function(event: React.MouseEvent): void{
+   event.preventDefault();
+   setColor("red");
+  }
 
    return (
       <div className="recipecard-wrapper">
@@ -41,6 +49,11 @@ const RecipeCard: React.FC<IRecipeData> = (props:IRecipeData) => {
                            {renderIngredientLines(ingredients)}
                         </Typography>  
                      </ul>
+                     <div className="likes-attribute">
+                        <button onClick={handleLike} className="likebtn">
+                           <i className="fa fa-heart fa-lg" id={btncolor}></i>
+                        </button> 
+                     </div>
                   </CardContent>
                </Card>
             </Grid>

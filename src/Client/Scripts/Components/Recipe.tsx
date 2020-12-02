@@ -8,6 +8,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 
+import Constant from '../Constants';
 import recipes from '../RecipeData';
 import {Ingredient} from '../Models/IRecipeData';
 import {IGroceryList, list} from '../Models/IGroceryList';
@@ -71,10 +72,13 @@ const Recipe: React.FC<RouteComponentProps<RouteParams>> = (props:RouteComponent
                         <ol>
                            {renderStepLines(recipe.steps)}
                         </ol>
+
                      </Typography>  
                      <form onSubmit={handleSubmit}>
                         <input type='submit' className="submit-button" value="Add ingredients to grocery list"/>
                      </form>     
+                     </Typography>
+
                   </CardContent>
                </Card>
             </Grid>

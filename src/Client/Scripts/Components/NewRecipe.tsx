@@ -71,6 +71,7 @@ let handleSubmit = function (): void {
       type: inState.typeInput,
       ingredients: state.ingredients,
       steps: state.steps,
+      likes: 0,
   }
   recipes.push(myNewRecipe)
   console.log(recipes)
