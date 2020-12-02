@@ -25,4 +25,5 @@ export interface RecipeToAdd {
   type: string;
   ingredients: Ingredient[];
   steps: string[];
+  likes: number;
 }

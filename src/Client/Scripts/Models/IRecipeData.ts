@@ -11,9 +11,11 @@ export interface IRecipeData{
     type: string;
     ingredients: ReadonlyArray<Ingredient>;
     steps: ReadonlyArray<string>;
+    likes: number;
 }
 
 export interface NewRecipeData{
     ingredients: Ingredient[];
     steps: string[];
 }
+
