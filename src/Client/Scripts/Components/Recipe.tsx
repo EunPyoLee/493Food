@@ -8,19 +8,29 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 
-
 import Constant from '../Constants';
 import recipes from '../RecipeData';
-import {Ingredient} from '../Models/IRecipeData'
+import {Ingredient} from '../Models/IRecipeData';
+import {IGroceryList, list} from '../Models/IGroceryList';
 import {imgStyle, contentCardStyle, contentTextStyle} from '../../Styles/Components/StyleRecipe';
+import NewRecipe from './NewRecipe';
 
 interface RouteParams{
    recipeId: string;
 }
 
+
 const Recipe: React.FC<RouteComponentProps<RouteParams>> = (props:RouteComponentProps<RouteParams>) => {
    const recipeId = parseInt(props.match.params.recipeId);
    const recipe = recipes[recipeId];
+
+   let handleSubmit = function (event:React.FormEvent): void {
+      event.preventDefault();
+      const newItems = recipe.ingredients;
+      list.push.apply(list, newItems);
+      console.log(list);
+      alert("Ingredients added to list!");
+    };
 
    const renderIngredientLines = (ingredients: ReadonlyArray<Ingredient>): ReadonlyArray<React.ReactNode> => {
       return ingredients.map((ingredient, idx) => (
@@ -38,6 +48,7 @@ const Recipe: React.FC<RouteComponentProps<RouteParams>> = (props:RouteComponent
 };
 
    return (
+      
       <div className="recipe-wrapper">
          <Grid className="home-grid-row" container spacing={0} style={{justifyContent: 'center'}}>
             <Grid item xs={12} md={6} className="home-grid-col">
@@ -61,7 +72,13 @@ const Recipe: React.FC<RouteComponentProps<RouteParams>> = (props:RouteComponent
                         <ol>
                            {renderStepLines(recipe.steps)}
                         </ol>
+
+                     </Typography>  
+                     <form onSubmit={handleSubmit}>
+                        <input type='submit' className="submit-button" value="Add ingredients to grocery list"/>
+                     </form>     
                      </Typography>
+
                   </CardContent>
                </Card>
             </Grid>
