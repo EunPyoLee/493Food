@@ -49,7 +49,6 @@ const renderIngredients = (): ReadonlyArray<React.ReactNode> => {
       ))
   };
 
-//Just for Prototype will alert when action is completed, will fill in functionality later
 let updateIngredients = function (): void {
   state.ingredients.push({ingredientName:inState.ingredientInput, quantity:inState.quantityInput})
   setState({ingredients:state.ingredients, steps:state.steps})
@@ -62,6 +61,7 @@ let updateSteps = function (): void {
 
 let handleSubmit = function (): void {
   alert("New Recipe Added!")
+  setState({ingredients:[], steps:[]})
   let myNewRecipe:RecipeToAdd = {
       recipeId: recipes.length,
       name: inState.nameInput,
