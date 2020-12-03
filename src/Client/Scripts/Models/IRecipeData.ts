@@ -2,6 +2,9 @@ export interface Ingredient{
     ingredientName: string;
     quantity: string;
 }
+export interface ListIngredient{
+    ingredientName: string;
+}
 export interface IRecipeData{
     recipeId: number;
     name: string;

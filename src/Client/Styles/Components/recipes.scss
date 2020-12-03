@@ -8,7 +8,7 @@
     
     #select-type {
         border:thin solid  #e5e5e5;
-        box-shadow:0px 1px 1px 1px #e5e5e5;
+        box-shadow:1px 1px 1px 1px #002855;
         float:left;
         height:30px;
         margin:.8em 0 0 .5em; 
@@ -19,7 +19,7 @@
     }
     #select-time{
         border:thin solid  #e5e5e5;
-        box-shadow:0px 1px 1px 1px #e5e5e5;
+        box-shadow:1px 1px 1px 1px #002855;
         float:left;
         height:30px;
         margin:.8em 0 0 .5em; 
@@ -33,7 +33,7 @@
         border-right:thin solid #e5e5e5;
         border-bottom:0;
         border-left:thin solid  #e5e5e5;
-        box-shadow:0px 1px 1px 1px #e5e5e5;
+        box-shadow:1px 1px 1px 1px #002855;
         float:left;
         height:17px;
         margin:.8em 0 0 .5em; 
@@ -48,7 +48,7 @@
     .button-holder{
         background-color:#f1f1f1;
         border-top:thin solid #e5e5e5;
-        box-shadow:1px 1px 1px 1px #e5e5e5;
+        box-shadow:1px 1px 1px 1px #002855;
         cursor:pointer;
         float:left;
         height:27px;
@@ -58,12 +58,25 @@
     }
     #search-bttn
     {
-        color: #575756;
-        display: block;
+        font-weight: bold;
+        margin-top: 10px;
+        height:28px;
+        padding: 5px 10px;
+        font-size: 13px;
+        background-color: #f1f1f1;
+        border-radius: 6px;
+        border:thin solid  #e5e5e5;
+        box-shadow:1px 1px 1px 1px #002855;
+        color: #002855;
+    }
+    .add-grocery-button
+    {
+        height:38px;
+        padding: 0 30px;
+        font-size: 11px;
+        background-color: transparent;
+        border-radius: 6px;
         border:thin solid  #e5e5e5;
         box-shadow:0px 1px 1px 1px #e5e5e5;
-        margin:.8em 0 0 .5em; 
-        outline:0; 
-        height:27px;
     }
 }

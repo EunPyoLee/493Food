@@ -14,6 +14,7 @@ import {Ingredient} from '../Models/IRecipeData';
 import {IGroceryList, list} from '../Models/IGroceryList';
 import {imgStyle, contentCardStyle, contentTextStyle} from '../../Styles/Components/StyleRecipe';
 import NewRecipe from './NewRecipe';
+import {ListIngredient} from '../Models/IRecipeData'
 
 interface RouteParams{
    recipeId: string;
@@ -23,12 +24,17 @@ interface RouteParams{
 const Recipe: React.FC<RouteComponentProps<RouteParams>> = (props:RouteComponentProps<RouteParams>) => {
    const recipeId = parseInt(props.match.params.recipeId);
    const recipe = recipes[recipeId];
+   const groceryIngredients: ListIngredient[] = recipe.ingredients.map((item, idx) => (
+      {ingredientName: item.ingredientName}))
 
-   let handleSubmit = function (event:React.FormEvent): void {
+   let addToList = function (event:React.FormEvent): void {
       event.preventDefault();
-      const newItems = recipe.ingredients;
-      list.push.apply(list, newItems);
-      console.log(list);
+      let not_included: ListIngredient[] = [];
+      not_included = groceryIngredients.filter(ingredient =>
+         !list.some(item => item.ingredientName === ingredient.ingredientName))
+      not_included.map((item, idx) => (
+         list.push(item)
+      ))
       alert("Ingredients added to list!");
     };
 
@@ -60,7 +66,7 @@ const Recipe: React.FC<RouteComponentProps<RouteParams>> = (props:RouteComponent
             <Grid item xs={12} md={6} className="home-grid-col">
                <Card style={contentCardStyle}>
                   <CardContent>
-                     <Typography variant="h3" component="h3">
+                     <Typography className="recipe-title" variant="h3" component="h3">
                         {recipe.name}
                      </Typography>
                      <Typography  color="textSecondary" gutterBottom>
@@ -68,15 +74,17 @@ const Recipe: React.FC<RouteComponentProps<RouteParams>> = (props:RouteComponent
                            {renderIngredientLines(recipe.ingredients)}
                         </ul>
                      </Typography>
-                     <Typography variant="body1" style={contentTextStyle} component="p">
+                     <Typography color="textSecondary" variant="body1" style={contentTextStyle} component="p">
                         <ol>
                            {renderStepLines(recipe.steps)}
                         </ol>
 
                      </Typography>
-                     <form onSubmit={handleSubmit}>
-                        <input type='submit' className="submit-button" value="Add ingredients to grocery list"/>
-                     </form>
+                     <div className="add-to-list">
+                        <button onClick={addToList} className="add-grocery-button">
+                        Add ingredients to grocery list
+                        </button>
+                     </div>
                      </CardContent> 
                </Card>
             </Grid>

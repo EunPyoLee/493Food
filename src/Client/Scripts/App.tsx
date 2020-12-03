@@ -26,16 +26,16 @@ const App: React.FC<{}> = () => {
         <Toolbar className="appbar-toolbar" style={appbarStyle}>
               <Grid container direction="row" style={appbarRowStyle}>
                 <Grid item xs={4}>
-                  <Typography variant="subtitle2" className="appbar-external-links">
+                  <Typography variant="subtitle1" className="appbar-external-links">
                   <Link to={recipes}> Recipes </Link> | 
                   <Link to={newRecipe}> Upload a recipe </Link>
                   </Typography>
                 </Grid>
                 <Grid item xs={4} style={{textAlign: 'center'}}>
-                    <Typography variant="h5" className="appbar-title"> <Link to={home}>{appbarTitle} </Link></Typography>
+                    <Typography variant="h4" className="appbar-title"> <Link to={home}>{appbarTitle} </Link></Typography>
                 </Grid>
                 <Grid item xs={4}  style={{textAlign: 'end'}}>
-                  <Typography variant="subtitle2" className="appbar-external-links">
+                  <Typography variant="subtitle1" className="appbar-external-links">
                     <Link to={groceries}> My grocery list</Link>
                   </Typography>
                 </Grid>

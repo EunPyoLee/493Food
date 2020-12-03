@@ -18,6 +18,9 @@
     &:hover{
         opacity: 0.7;
     }
+    box-sizing: content-box;
+    box-shadow:1px 1px 1px 1px #e5e5e5;
+    margin: 15px;
 }
 
 .likebtn
@@ -28,10 +31,19 @@
     background-color: transparent;
     border-radius: 6px;
     border:thin solid  #e5e5e5;
-    box-shadow:0px 1px 1px 1px #e5e5e5;
+    box-shadow:0px 1px 1px 1px #002855;
 }
 
 .likes-attribute{
+    width: 200px; 
+    text-align: center; 
+    margin: auto; 
+    justify-content: center;
+    justify-items: center;
+}
+
+.add-to-list
+{
     width: 200px; 
     text-align: center; 
     margin: auto; 
@@ -44,5 +56,21 @@
 }
 
 #grey{
-    color: #575756;
+    color: #002855;
+}
+.add-grocery-button
+{
+    margin-top: 10px;
+    height:38px;
+    padding: 0 30px;
+    font-size: 13px;
+    background-color: transparent;
+    border-radius: 6px;
+    border:thin solid  #e5e5e5;
+    box-shadow:0px 1px 1px 1px #002855;
+    color: #002855;
+}
+.recipe-title
+{
+    color: #002855!important;
 }
