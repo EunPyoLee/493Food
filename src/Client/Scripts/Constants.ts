@@ -12,8 +12,8 @@ const constants = {
     },
     contents: {
         homeContents: {
-            welcomeTitle: 'Welcome to Recipe493',
-            welcomeImg: '/images/welcomeImg.jpg',
+            uploadTitle: 'Upload New Recipe',
+            uploadImg: '/images/welcomeImg.jpg',
             browseTitle: 'Browse Recipes',
             browseImg: '/images/browseImg.jpg',
             randomTitle: 'Recommended Recipe',

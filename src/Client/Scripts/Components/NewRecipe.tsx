@@ -1,14 +1,7 @@
 import * as React from 'react';
 import Grid from '@material-ui/core/Grid';
 import {NewRecipeData, NewRecipeInput, RecipeToAdd} from '../Models/INewRecipeData';
-import {Ingredient, IRecipeData} from '../Models/IRecipeData'
 import recipes from '../RecipeData';
-
-type NewRecipeState = {
-  stepsToAdd:string[],
-  ingredientsToAdd:Ingredient[]
-}
-
 
 const NewRecipe: React.FC<{}> = () => {
 
@@ -27,7 +20,6 @@ let myRecipeInput:NewRecipeInput = {
   quantityInput: '',
   stepInput:'',
     }
-
 
 const [state, setState] = React.useState<NewRecipeData>(myRecipeData);
 const [inState, setInState] = React.useState<NewRecipeInput>(myRecipeInput);
@@ -62,7 +54,23 @@ let updateSteps = function (): void {
 };
 
 let handleSubmit = function (): void {
-  alert("New Recipe Added!")
+  if (!inState.nameInput) {
+    alert("Please Enter Recipe Name")
+    return
+  }
+  if (!inState.imgInput) {
+    alert("Please Select an Image")
+    return
+  }
+  if (state.ingredients.length === 0) {
+    alert("Please Add Ingredients")
+    return
+  }
+  if (state.steps.length === 0) {
+    alert("Please Add Steps")
+    return
+  }
+
   let myNewRecipe:RecipeToAdd = {
       recipeId: recipes.length,
       name: inState.nameInput,
@@ -77,6 +85,7 @@ let handleSubmit = function (): void {
   recipes.push(myNewRecipe)
   console.log(recipes)
   setState({ingredients:[], steps:[]})
+  alert("New Recipe Added!")
 }
 
 const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>): void => {
@@ -103,7 +112,7 @@ const onChangeSelect= (event: React.ChangeEvent<HTMLSelectElement>): void => {
           <div className="new-form-wrapper">
           <h2 className="new-recipe-header">Upload New Recipe</h2>
             <form className="recipe-form">
-            <Grid container xs={12} spacing={1} style={{alignContent: 'left'}}>
+            <Grid container item xs={12} spacing={1} style={{alignContent: 'left'}}>
               <Grid container item xs={12} spacing={3}>
               <Grid container item xs={2} spacing={1}></Grid>
               <Grid container item xs={4} spacing={1}>
@@ -180,9 +189,9 @@ const onChangeSelect= (event: React.ChangeEvent<HTMLSelectElement>): void => {
                 <input className="ingredient-name" type="text" name="ingredientInput" placeholder="Ingredient Name" value={inState.ingredientInput} onChange={onChangeInput}/>
                 <input className="ingredient-qty" type="text" name="quantityInput" placeholder="Enter Quantity" value={inState.quantityInput} onChange={onChangeInput}/>
                 <button className="button-holder form-button" type="button" onClick={updateIngredients}>
-                  <img src='/images/add-list-icon.png'/>
+                  <img src='/images/add-list-icon.png' alt="icon"/>
                 </button>
-                <ol ingredients-wrapper>
+                <ol className="ingredients-wrapper">
                 {renderIngredients()}
                 </ol>
               </div>
@@ -199,9 +208,9 @@ const onChangeSelect= (event: React.ChangeEvent<HTMLSelectElement>): void => {
                 <div className="form-item">
                   <input className="step-input" type="text" placeholder="Enter Step" value={inState.stepInput} name="stepInput" onChange={onChangeInput}/>
                   <button type="button" className="button-holder form-button" onClick={updateSteps}>
-                  <img src='/images/add-list-icon.png'/>
+                  <img src='/images/add-list-icon.png' alt="icon"/>
                   </button>
-                  <ol ingredients-wrapper>
+                  <ol className="ingredients-wrapper">
                   {renderSteps()}
                   </ol>
                 </div>

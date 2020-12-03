@@ -7,20 +7,18 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import recipes from '../RecipeData';
-import {IGroceryList, list} from '../Models/IGroceryList';
+import {list} from '../Models/IGroceryList';
 import {ListIngredient} from '../Models/IRecipeData'
 
 import {imgStyle, contentCardStyle} from '../../Styles/Components/StyleRecipe';
-import { ReactComponent } from '*.svg';
-import { isTemplateExpression } from 'typescript';
 
 const RecipeCard: React.FC<IRecipeData> = (props:IRecipeData) => {
-  const {recipeId, name, imgLink, ingredients, steps, likes} = props;
+  const {recipeId, name, imgLink, ingredients} = props;
   const groceryIngredients: ListIngredient[] = ingredients.map((item, idx) => (
    {ingredientName: item.ingredientName}))
 
    let initialColor = "grey"
-   if (recipes[recipeId].likes == 1) {
+   if (recipes[recipeId].likes === 1) {
      initialColor = "red"
    }
    const [btncolor, setColor] = React.useState(initialColor);
@@ -36,7 +34,7 @@ const RecipeCard: React.FC<IRecipeData> = (props:IRecipeData) => {
 
   const handleLike = function(event: React.MouseEvent): void {
    event.preventDefault();
-   if (recipes[recipeId].likes == 1) {
+   if (recipes[recipeId].likes === 1) {
      recipes[recipeId].likes = 0;
      setColor("grey");
    }

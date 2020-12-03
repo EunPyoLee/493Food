@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom';
 import recipes from '../RecipeData';
 import RecipeCard from './RecipeCard';
 import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
 
 import IFilterOptions from '../Models/IFilterOptions'
 
@@ -103,7 +102,7 @@ const Recipes: React.FC<{}> = () => {
                   <Grid container item xs={6}>
                      <div className="filter-wrapper">
                      <div className='button-holder'>
-                        <img src='/images/type_icon.png' />
+                        <img src='/images/type_icon.png' alt='icon' />
                      </div>
                      <select onChange={onChangeType} name="typeOption" id="select-type">
                         <option disabled>Select Type</option>
@@ -118,7 +117,7 @@ const Recipes: React.FC<{}> = () => {
                   </Grid>
                   <Grid container item xs={6}>
                   <div className='button-holder'>
-                        <img src='/images/time-icon.png' />
+                        <img src='/images/time-icon.png' alt='icon' />
                      </div>
                      <select onChange={onChangeTime} name="timeOption" id="select-time">
                         <option disabled>Select Time</option>
@@ -131,7 +130,7 @@ const Recipes: React.FC<{}> = () => {
                   </Grid>
                   <Grid container item xs={6}>
                      <div className='button-holder'>
-                        <img src='/images/search-icon.png' />
+                        <img src='/images/search-icon.png' alt='icon'/>
                      </div>
                      <input
                         onChange={onChangeText}

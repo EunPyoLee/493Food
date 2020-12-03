@@ -12,21 +12,23 @@ import {imageStyle} from '../../Styles/Components/StyleHome';
 const Home: React.FC<{}> = () => {
   const {contents : {homeContents}} = Constant;
   const randRecipe = recipes[Math.floor(Math.random() * recipes.length)];
-  const {welcomeTitle, welcomeImg, browseTitle, browseImg, randomTitle, randomImg, groceryImg, groceryTitle} = homeContents;
+  const {uploadTitle, uploadImg, browseTitle, browseImg, randomTitle, randomImg, groceryImg, groceryTitle} = homeContents;
 
    return (
       <div className="home-wrapper">
         <Grid className="home-grid-row" container spacing={9} style={{justifyContent: 'center'}}>
           <Grid item xs={12} lg={6} className="home-grid-col">
-            <CardActionArea className="card-wrapper" style={{pointerEvents: "none"}}>
-                <div className="home-welcome-wrapper">
+            <CardActionArea className="card-wrapper">
+              <Link to="/NewRecipe">
+                <div className="home-image-wrapper">
                   <CardMedia
                       style={imageStyle}
-                      image={welcomeImg}
+                      image={uploadImg}
                       title="About Me"
                   />
-                  <div className="image-text">{welcomeTitle}</div>
+                  <div className="image-text">{uploadTitle}</div>
                 </div>
+                </Link>
             </CardActionArea>
           </Grid>
           <Grid item xs={12} lg={6} className="home-grid-col">
