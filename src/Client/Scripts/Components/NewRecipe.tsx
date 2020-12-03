@@ -52,11 +52,13 @@ const renderIngredients = (): ReadonlyArray<React.ReactNode> => {
 let updateIngredients = function (): void {
   state.ingredients.push({ingredientName:inState.ingredientInput, quantity:inState.quantityInput})
   setState({ingredients:state.ingredients, steps:state.steps})
+  setInState(prevState =>({...prevState, "ingredientInput": "", "quantityInput": ''}))
 };
 
 let updateSteps = function (): void {
   state.steps.push(inState.stepInput)
   setState({ingredients:state.ingredients, steps:state.steps})
+  setInState(prevState =>({...prevState, "stepInput": ""}))
 };
 
 let handleSubmit = function (): void {
@@ -113,7 +115,7 @@ const onChangeSelect= (event: React.ChangeEvent<HTMLSelectElement>): void => {
               </Grid>
               <Grid container item xs={6} spacing={1}>
               <div className="form-item">
-                <input type="file" id="file" name="imgInput" className="inputfile" accept="image/*" onChange={onChangeFile}/>
+                <input type="file" id="file" name="imgInput" className="inputfile file-button" accept="image/*" onChange={onChangeFile}/>
                 <label htmlFor="file" >Upload Recipe Photo</label>
               </div>
               </Grid>
@@ -177,9 +179,9 @@ const onChangeSelect= (event: React.ChangeEvent<HTMLSelectElement>): void => {
                 </Grid>
                 <Grid container item xs={6} spacing={1}>
                 <div className="form-item">
-                <input className="ingredient-name" type="text" name="ingredientInput" placeholder="Ingredient Name" onChange={onChangeInput}/>
-                <input className="ingredient-qty" type="text" name="quantityInput" placeholder="Enter Quantity" onChange={onChangeInput}/>
-                <button className="button-holder" type="button" onClick={updateIngredients}>
+                <input className="ingredient-name" type="text" name="ingredientInput" placeholder="Ingredient Name" value={inState.ingredientInput} onChange={onChangeInput}/>
+                <input className="ingredient-qty" type="text" name="quantityInput" placeholder="Enter Quantity" value={inState.quantityInput} onChange={onChangeInput}/>
+                <button className="button-holder form-button" type="button" onClick={updateIngredients}>
                   <img src='/images/add-list-icon.png'/>
                 </button>
                 <ol ingredients-wrapper>
@@ -197,8 +199,8 @@ const onChangeSelect= (event: React.ChangeEvent<HTMLSelectElement>): void => {
                 </Grid>
                 <Grid container item xs={6} spacing={1}>
                 <div className="form-item">
-                  <input className="step-input" type="text" placeholder="Enter Step" name="stepInput" onChange={onChangeInput}/>
-                  <button type="button" className="button-holder" onClick={updateSteps}>
+                  <input className="step-input" type="text" placeholder="Enter Step" value={inState.stepInput} name="stepInput" onChange={onChangeInput}/>
+                  <button type="button" className="button-holder form-button" onClick={updateSteps}>
                   <img src='/images/add-list-icon.png'/>
                   </button>
                   <ol ingredients-wrapper>
@@ -207,11 +209,11 @@ const onChangeSelect= (event: React.ChangeEvent<HTMLSelectElement>): void => {
                 </div>
                 </Grid>
               </Grid>
+              </Grid>
+              </form>
                 <div className="submit-button-wrapper">
                   <button type='submit' onClick={handleSubmit} className="submit-button">Submit!</button>
                 </div>
-              </Grid>
-              </form>
               </div>
           </div>
     );
