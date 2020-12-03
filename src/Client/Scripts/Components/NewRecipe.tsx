@@ -99,37 +99,47 @@ const onChangeSelect= (event: React.ChangeEvent<HTMLSelectElement>): void => {
 
    return (
       <div className="new-recipe-form">
-        <h1 className="new-recipe-header">Upload New Recipe</h1>
           <div className="new-form-wrapper">
+          <h2 className="new-recipe-header">Upload New Recipe</h2>
             <form className="recipe-form">
-            <Grid container spacing={2} style={{alignContent: 'flex-start'}}>
-              <Grid container item xs={6} direction="column" >
+            <Grid container xs={12} spacing={1} style={{alignContent: 'left'}}>
+              <Grid container item xs={12} spacing={3}>
+              <Grid container item xs={2} spacing={1}></Grid>
+              <Grid container item xs={4} spacing={1}>
               <div className="form-label">
-                <label htmlFor="photo-upload">Upload Recipe Photo</label>
+                <label htmlFor="imgInput">Upload Recipe Photo</label>
               </div>
+              </Grid>
+              <Grid container item xs={6} spacing={1}>
+              <div className="form-item">
+                <input type="file" id="file" name="imgInput" className="inputfile" accept="image/*" onChange={onChangeFile}/>
+                <label htmlFor="file" >Upload Recipe Photo</label>
+              </div>
+              </Grid>
+              </Grid>
+              <Grid container item xs={12} spacing={3}>
+              <Grid container item xs={2} spacing={1}></Grid>
+              <Grid container item xs={4} spacing={1}>
               <div className="form-label">
                 <label htmlFor="recipe-title">Recipe Title</label>
               </div>
-              <div className="form-label">
-                <label htmlFor="recipe-type">Recipe Type</label>
-              </div>
-              <div className="form-label">
-                <label htmlFor="cook-time">Cook Time</label>
-              </div>
-              <div className="form-label">
-                <label htmlFor="ingredient">Add an Ingredient</label>
-              </div>
-
               </Grid>
-              <Grid container item xs={6} direction="column" >
+              <Grid container item xs={6} spacing={1}>
               <div className="form-item">
-                <input type="file" name="imgInput" className="file-button" accept="image/*" onChange={onChangeFile}/>
+                <input className="recipe-title" type="text" placeholder="Recipe Name" name="nameInput" onChange={onChangeInput}/>
               </div>
-              <div className="form-item">
-                <input type="text" placeholder="Recipe Name" name="nameInput" onChange={onChangeInput}/>
-              </div>
-              <div className="form-item">
-                <select name="typeInput" id="type-of-recipe" onChange={onChangeSelect}>
+              </Grid>
+              </Grid>
+              <Grid container item xs={12} spacing={3}>
+              <Grid container item xs={2} spacing={1}></Grid>
+              <Grid container item xs={4} spacing={1}>
+                <div className="form-label">
+                <label htmlFor="recipe-type">Recipe Type</label>
+                </div>
+                </Grid>
+                <Grid container item xs={6} spacing={1}>
+                <div className="form-item">
+                <select className="recipe-type" name="typeInput" id="type-of-recipe" onChange={onChangeSelect}>
                   <option value="None">None</option>
                   <option value="Chicken">Chicken</option>
                   <option value="Beef">Beef</option>
@@ -138,44 +148,69 @@ const onChangeSelect= (event: React.ChangeEvent<HTMLSelectElement>): void => {
                   <option value="Dessert">Dessert</option>
                 </select>
               </div>
-              <div className="form-item">
-                <input type="Number" placeholder="0" name="timeInput" onChange={onChangeInput}/>
-                <select name="unitInput" id="time-units" onChange={onChangeSelect}>
+              </Grid>
+              </Grid>
+              <Grid container item xs={12} spacing={3}>
+              <Grid container item xs={2} spacing={1}></Grid>
+              <Grid container item xs={4} spacing={1}>
+                <div className="form-label">
+                <label htmlFor="cook-time">Cook Time</label>
+                </div>
+                </Grid>
+                <Grid container item xs={6} spacing={1}>
+                <div className="form-item">
+                <input className="cook-time" type="Number" placeholder="0" name="timeInput" onChange={onChangeInput}/>
+                <select className="cook-unit" name="unitInput" id="time-units" onChange={onChangeSelect}>
                   <option value="Minutes">Minutes</option>
                   <option value="Hours">Hours</option>
                 </select>
               </div>
-              <div className="form-item">
-                <input type="text" name="ingredientInput" placeholder="Ingredient Name" onChange={onChangeInput}/>
-                <input type="text" name="quantityInput" placeholder="Enter Quantity" onChange={onChangeInput}/>
-                <button className="form-button" type="button" onClick={updateIngredients}>Add Ingredient</button>
+              </Grid>
+              </Grid>
+              <Grid container item xs={12} spacing={3}>
+              <Grid container item xs={2} spacing={1}></Grid>
+              <Grid container item xs={4} spacing={1}>
+                <div className="form-label">
+                <label htmlFor="ingredient">Add an Ingredient</label>
+                </div>
+                </Grid>
+                <Grid container item xs={6} spacing={1}>
+                <div className="form-item">
+                <input className="ingredient-name" type="text" name="ingredientInput" placeholder="Ingredient Name" onChange={onChangeInput}/>
+                <input className="ingredient-qty" type="text" name="quantityInput" placeholder="Enter Quantity" onChange={onChangeInput}/>
+                <button className="button-holder" type="button" onClick={updateIngredients}>
+                  <img src='/images/add-list-icon.png'/>
+                </button>
                 <ol ingredients-wrapper>
                 {renderIngredients()}
                 </ol>
               </div>
-
               </Grid>
-              <Grid container spacing={2} style={{alignContent: 'flex-start'}}>
-                <Grid container item xs={6} direction="column" >
+              </Grid>
+              <Grid container item xs={12} spacing={3}>
+              <Grid container item xs={2} spacing={1}></Grid>
+              <Grid container item xs={4} spacing={1}>
                 <div className="form-label">
                   <label htmlFor="step">Recipe Step</label>
                 </div>
                 </Grid>
-                <Grid container item xs={6} direction="column" >
+                <Grid container item xs={6} spacing={1}>
                 <div className="form-item">
-                  <input type="text" name="stepInput" onChange={onChangeInput}/>
-                  <button type="button" className="form-button" onClick={updateSteps}>Add Step</button>
+                  <input className="step-input" type="text" placeholder="Enter Step" name="stepInput" onChange={onChangeInput}/>
+                  <button type="button" className="button-holder" onClick={updateSteps}>
+                  <img src='/images/add-list-icon.png'/>
+                  </button>
                   <ol ingredients-wrapper>
                   {renderSteps()}
                   </ol>
                 </div>
                 </Grid>
               </Grid>
-              </Grid>
-              </form>
                 <div className="submit-button-wrapper">
                   <button type='submit' onClick={handleSubmit} className="submit-button">Submit!</button>
                 </div>
+              </Grid>
+              </form>
               </div>
           </div>
     );

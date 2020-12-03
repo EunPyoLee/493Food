@@ -1,8 +1,8 @@
-import {Ingredient} from './IRecipeData';
+import {ListIngredient} from './IRecipeData';
 
-export let list: Ingredient[] = [];
+export let list: ListIngredient[] = [];
 export interface IGroceryList{
-    items: Array<Ingredient>;
+    items: Array<ListIngredient>;
 }
 
-type AddItem = (list: Array<Ingredient>) => void;
+type AddItem = (list: Array<ListIngredient>) => void;

@@ -7,12 +7,17 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import recipes from '../RecipeData';
+import {IGroceryList, list} from '../Models/IGroceryList';
+import {ListIngredient} from '../Models/IRecipeData'
 
 import {imgStyle, contentCardStyle} from '../../Styles/Components/StyleRecipe';
 import { ReactComponent } from '*.svg';
+import { isTemplateExpression } from 'typescript';
 
 const RecipeCard: React.FC<IRecipeData> = (props:IRecipeData) => {
   const {recipeId, name, imgLink, ingredients, steps, likes} = props;
+  const groceryIngredients: ListIngredient[] = ingredients.map((item, idx) => (
+   {ingredientName: item.ingredientName}))
 
    let initialColor = "grey"
    if (recipes[recipeId].likes == 1) {
@@ -41,6 +46,17 @@ const RecipeCard: React.FC<IRecipeData> = (props:IRecipeData) => {
    }
   }
 
+  let addToList = function (event:React.FormEvent): void {
+   event.preventDefault();
+   let not_included: ListIngredient[] = [];
+   not_included = groceryIngredients.filter(ingredient =>
+      !list.some(item => item.ingredientName === ingredient.ingredientName))
+   not_included.map((item, idx) => (
+      list.push(item)
+   ))
+   alert("Ingredients added to list!");
+ };
+
    return (
       <div className="recipecard-wrapper">
          <Grid className="home-grid-row" container spacing={0} style={{justifyContent: 'center'}}>
@@ -53,7 +69,7 @@ const RecipeCard: React.FC<IRecipeData> = (props:IRecipeData) => {
             <Grid item xs={12} md={6} className="home-grid-col">
                <Card style={contentCardStyle}>
                   <CardContent >
-                     <Typography variant="h5" component="h5">
+                     <Typography className="recipe-title" variant="h5" component="h5">
                         {name}
                      </Typography>
                      <ul>
@@ -64,6 +80,11 @@ const RecipeCard: React.FC<IRecipeData> = (props:IRecipeData) => {
                      <div className="likes-attribute">
                         <button onClick={handleLike} className="likebtn">
                            <i className="fa fa-heart fa-lg" id={btncolor}></i>
+                        </button>
+                     </div>
+                     <div className="add-to-list">
+                        <button onClick={addToList} className="add-grocery-button">
+                        Add ingredients to grocery list
                         </button>
                      </div>
                   </CardContent>

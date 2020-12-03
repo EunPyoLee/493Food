@@ -1,0 +1,106 @@
+@import '../vars.scss';
+
+.grocerylist-wrapper{
+    width: 50%;
+    height: auto;
+    margin: auto; 
+    text-align: center;
+    background-color: #e2dede;
+    border-radius: 3px;
+    box-shadow:0px 1px 1px 1px #e5e5e5;
+
+    #grocery_heading
+    {
+        padding-top: 20px;
+        color: #002855;
+    }
+    #empty_list{
+        color: #002855;
+    }
+
+    #email-form{
+        visibility: hidden;
+    }
+
+    .grocery-list{
+        list-style-type: none;
+    }
+    #add-grocery-item
+    {
+        border-top:thin solid  #e5e5e5;
+        border-right:thin solid #e5e5e5;
+        border-bottom:0;
+        border-left:thin solid  #e5e5e5;
+        box-shadow:0px 1px 1px 1px #e5e5e5;
+        height:23px;
+        outline:0;
+        min-width: 180px;
+    }
+    .button-holder img{
+        margin:4px;
+        width:20px; 
+    }
+    .button-holder{
+        background-color:#f1f1f1;
+        border-top:thin solid #e5e5e5;
+        box-shadow:1px 1px 1px 1px #e5e5e5;
+        cursor:pointer;
+        height:27px;
+        text-align:center;
+        width:50px;
+    }
+    .send-button{
+        font-weight: bold;
+        margin-top: 10px;
+        height:38px;
+        padding: 0 30px;
+        font-size: 13px;
+        background-color: #f1f1f1;
+        border-radius: 6px;
+        border:thin solid  #e5e5e5;
+        box-shadow:1px 1px 1px 1px #002855;
+        color: #002855;
+    }
+    .checkbox{
+        color: #002855;
+        box-shadow: 1px 1px 1px 1px #002855;
+        margin-right: 5px;
+    }
+
+    .name-ingredient{
+        margin-left: 5px;
+        font-size: 18px;
+        color: #002855;
+    }
+    ul{
+        width: 30%;
+        margin: auto;
+        text-align: left;
+        padding-bottom: 10px;
+    }
+    #email-input
+    {
+        margin-top: 10px;
+        border-top:thin solid  #e5e5e5;
+        border-right:thin solid #e5e5e5;
+        border-bottom:0;
+        border-left:thin solid  #e5e5e5;
+        box-shadow:0px 1px 1px 1px #e5e5e5;
+        height:23px;
+        outline:0;
+        min-width: 230px;
+    }
+    .send-email
+    {
+        font-weight: bold;
+        margin-top: 10px;
+        height:28px;
+        padding: 5px 10px;
+        font-size: 13px;
+        background-color: #f1f1f1;
+        border-radius: 6px;
+        border:thin solid  #e5e5e5;
+        box-shadow:1px 1px 1px 1px #002855;
+        color: #002855;
+    }
+}
