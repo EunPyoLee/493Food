@@ -61,7 +61,6 @@ let updateSteps = function (): void {
 
 let handleSubmit = function (): void {
   alert("New Recipe Added!")
-  setState({ingredients:[], steps:[]})
   let myNewRecipe:RecipeToAdd = {
       recipeId: recipes.length,
       name: inState.nameInput,
@@ -75,6 +74,7 @@ let handleSubmit = function (): void {
   }
   recipes.push(myNewRecipe)
   console.log(recipes)
+  setState({ingredients:[], steps:[]})
 }
 
 const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>): void => {
@@ -94,8 +94,6 @@ const onChangeFile = (event: React.ChangeEvent<HTMLInputElement>): void => {
 
 const onChangeSelect= (event: React.ChangeEvent<HTMLSelectElement>): void => {
    setInState(prevState => ({...prevState, [event.target.name]: event.target.value}));
-   console.log(event.target.name)
-   console.log(event.target.value)
 }
 
    return (
