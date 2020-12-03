@@ -85,7 +85,8 @@ const onChangeFile = (event: React.ChangeEvent<HTMLInputElement>): void => {
   if (event.target) {
     if (event.target.files) {
    const myFile = event.target.files[0]
-   setInState(prevState => ({...prevState, [event.target.name]: "/images/recipeImages/" + myFile.name}));
+   const myUrl = URL.createObjectURL(myFile)
+   setInState(prevState => ({...prevState, [event.target.name]: myUrl}));
    console.log(myFile)
  }
 }
