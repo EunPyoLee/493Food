@@ -1,8 +1,6 @@
 import * as React from 'react';
-import {Link} from 'react-router-dom';
 import {ListIngredient} from '../Models/IRecipeData'
-import { IGroceryList, list } from '../Models/IGroceryList';
-import { Tab } from '@material-ui/core';
+import { list } from '../Models/IGroceryList';
 import Grid from '@material-ui/core/Grid';
 
 type GroceriesState = {
@@ -29,7 +27,7 @@ const Groceries: React.FC<{}> = () => {
       empty = <div></div>
    };
    let checkOffItem = (event: React.ChangeEvent<HTMLInputElement>): void => {
-      const {name, value} = event.target;
+      const name = event.target.name;
       event.currentTarget.checked= true
       const index:number = parseInt(name)
       list.splice(index, 1);
@@ -98,7 +96,7 @@ const Groceries: React.FC<{}> = () => {
           <ul className="grocery-list">
           {renderIngredients()}
           </ul>
-          <Grid container item 
+          <Grid container item
           justify="center">
              <input
                onChange={onChangeText}
@@ -108,20 +106,20 @@ const Groceries: React.FC<{}> = () => {
                value={state.newitem.ingredientName}
             />
             <button className="button-holder" type="button" onClick={updateGroceries}>
-               <img src='/images/add-list-icon.png' />
+               <img src='/images/add-list-icon.png' alt="recipe"/>
             </button>
           </Grid>
          <div className="send-button-wrapper">
             <button className="send-button" type='button' onClick={sendListClick}>Send me my list!</button>
          </div>
-         <Grid container item 
+         <Grid container item
           justify="center">
              <div id="email-form">
-            <input 
-            onChange={onEmailChange} 
-            id='email-input' 
-            type='text' 
-            name='email' 
+            <input
+            onChange={onEmailChange}
+            id='email-input'
+            type='text'
+            name='email'
             placeholder='yourEmail@email_provider.com'
             value={emailState.email}
             />

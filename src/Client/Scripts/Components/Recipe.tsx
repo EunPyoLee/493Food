@@ -8,12 +8,10 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 
-import Constant from '../Constants';
 import recipes from '../RecipeData';
 import {Ingredient} from '../Models/IRecipeData';
-import {IGroceryList, list} from '../Models/IGroceryList';
+import {list} from '../Models/IGroceryList';
 import {imgStyle, contentCardStyle, contentTextStyle} from '../../Styles/Components/StyleRecipe';
-import NewRecipe from './NewRecipe';
 import {ListIngredient} from '../Models/IRecipeData'
 
 interface RouteParams{
@@ -69,12 +67,12 @@ const Recipe: React.FC<RouteComponentProps<RouteParams>> = (props:RouteComponent
                      <Typography className="recipe-title" variant="h3" component="h3">
                         {recipe.name}
                      </Typography>
-                     <Typography  color="textSecondary" gutterBottom>
+                     <Typography  color="textSecondary" component="div" gutterBottom>
                         <ul>
                            {renderIngredientLines(recipe.ingredients)}
                         </ul>
                      </Typography>
-                     <Typography color="textSecondary" variant="body1" style={contentTextStyle} component="p">
+                     <Typography color="textSecondary" variant="body1" style={contentTextStyle} component="div">
                         <ol>
                            {renderStepLines(recipe.steps)}
                         </ol>
@@ -85,7 +83,7 @@ const Recipe: React.FC<RouteComponentProps<RouteParams>> = (props:RouteComponent
                         Add ingredients to grocery list
                         </button>
                      </div>
-                     </CardContent> 
+                     </CardContent>
                </Card>
             </Grid>
          </Grid>
